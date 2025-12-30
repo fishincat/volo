@@ -840,11 +840,11 @@ checksum = "37909eebbb50d72f9059c3b6d82c0463f2ff062c9e95845c43a6c9c0355411be"
 
 [[package]]
 name = "faststr"
-version = "0.2.32"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "baec6a0289d7f1fe5665586ef7340af82e3037207bef60f5785e57569776f0c8"
+version = "0.2.33"
+source = "git+https://github.com/fishincat/faststr.git?branch=bytes_ref#814d8a29d2adc8614ef5e601b45113e13cbb5d24"
 dependencies = [
  "bytes",
+ "rand 0.9.2",
  "rkyv",
  "serde",
  "simdutf8",
@@ -2253,9 +2253,8 @@ dependencies = [
 
 [[package]]
 name = "pilota"
-version = "0.13.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d6b2b4411cfe7a943e5109deeaefe170f16b395e584917fb25c8d95d2b85695a"
+version = "0.13.1"
+source = "git+https://github.com/fishincat/pilota.git?branch=bytes_ref#ff813150906ea865312c0196b6f8374ee6fe5a12"
 dependencies = [
  "ahash",
  "anyhow",
@@ -2277,8 +2276,7 @@ dependencies = [
 [[package]]
 name = "pilota-build"
 version = "0.13.5"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c25569294e2338a732b0eda3ec027aa3240f05df1aa1d26b27bfbb9c570d72d5"
+source = "git+https://github.com/fishincat/pilota.git?branch=bytes_ref#ff813150906ea865312c0196b6f8374ee6fe5a12"
 dependencies = [
  "ahash",
  "anyhow",
@@ -2317,8 +2315,7 @@ dependencies = [
 [[package]]
 name = "pilota-thrift-fieldmask"
 version = "0.2.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "345dd826efa7f7697bd33fc1a11569a543b36e6c9d37b7930b7c960ab4d46a3d"
+source = "git+https://github.com/fishincat/pilota.git?branch=bytes_ref#ff813150906ea865312c0196b6f8374ee6fe5a12"
 dependencies = [
  "ahash",
  "ariadne",
@@ -2334,8 +2331,7 @@ dependencies = [
 [[package]]
 name = "pilota-thrift-parser"
 version = "0.13.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a446cfb1c72ce1717620d5a0a49430aae965ca1a873922280d39c161b97e8370"
+source = "git+https://github.com/fishincat/pilota.git?branch=bytes_ref#ff813150906ea865312c0196b6f8374ee6fe5a12"
 dependencies = [
  "anyhow",
  "ariadne",
@@ -2348,8 +2344,7 @@ dependencies = [
 [[package]]
 name = "pilota-thrift-reflect"
 version = "0.2.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "23783143b2508a130f578f289ed0a0ddf5e4ed3a5b400408e0f866604e2240ae"
+source = "git+https://github.com/fishincat/pilota.git?branch=bytes_ref#ff813150906ea865312c0196b6f8374ee6fe5a12"
 dependencies = [
  "ahash",
  "bytes",
@@ -4333,12 +4328,13 @@ version = "0.12.0"
 
 [[package]]
 name = "volo-thrift"
-version = "0.12.0"
+version = "0.12.1"
 dependencies = [
  "ahash",
  "anyhow",
  "bytes",
  "chrono",
+ "faststr",
  "futures",
  "itoa",
  "linked-hash-map",
@@ -5127,9 +5123,9 @@ dependencies = [
 
 [[package]]
 name = "zmij"
-version = "1.0.2"
+version = "1.0.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0f4a4e8e9dc5c62d159f04fcdbe07f4c3fb710415aab4754bf11505501e3251d"
+checksum = "e9747e91771f56fd7893e1164abd78febd14a670ceec257caad15e051de35f06"
 
 [[package]]
 name = "zstd"

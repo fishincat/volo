@@ -7,7 +7,6 @@ members = [
   "volo-http",
   "volo-macros",
   "volo-thrift",
-
   "examples",
   "examples/volo-gen",
   "benchmark",
@@ -19,18 +18,18 @@ resolver = "3"
 authors = ["Volo Team <volo@cloudwego.io>"]
 edition = "2024"
 homepage = "https://www.cloudwego.io/docs/volo/"
-repository = "https://github.com/cloudwego/volo"
 license = "MIT OR Apache-2.0"
+repository = "https://github.com/cloudwego/volo"
 rust-version = "1.85.0"
 
 [workspace.dependencies]
+metainfo = "0.7.14"
+motore = "0.4.1"
 pilota = "0.13"
 pilota-build = "0.13"
+pilota-thrift-fieldmask = "0.2"
 pilota-thrift-parser = "0.13"
 pilota-thrift-reflect = "0.2"
-pilota-thrift-fieldmask = "0.2"
-motore = "0.4.1"
-metainfo = "0.7.14"
 
 ahash = "0.8"
 anyhow = "1"
@@ -38,21 +37,21 @@ async-broadcast = "0.7"
 async-stream = "0.3"
 base64 = "0.22"
 bytes = "1"
-chrono = { version = "0.4", default-features = false, features = [
+chrono = {version = "0.4", default-features = false, features = [
   "std",
   "clock",
-] }
+]}
 clap = "4"
 colored = "3"
 cookie = "0.18"
 cookie_store = "0.21"
 dashmap = "6"
 dirs = "6"
-faststr = { version = "0.2.21", features = ["serde"] }
+faststr = {version = "0.2.21", features = ["serde"]}
+flate2 = "1"
 futures = "0.3"
 futures-util = "0.3"
-flate2 = "1"
-git2 = { version = "0.20", default-features = false }
+git2 = {version = "0.20", default-features = false}
 governor = "0.10"
 h2 = "0.4"
 heck = "0.5"
@@ -68,13 +67,13 @@ ipnet = "2"
 itertools = "0.14"
 itoa = "1"
 libc = "0.2"
-linkedbytes = "0.1.9"
 linked-hash-map = "0.5"
+linkedbytes = "0.1.9"
 log = "0.4"
 matchit = "0.8"
 memchr = "2"
 mime = "0.3"
-mime_guess = { version = "2", default-features = false }
+mime_guess = {version = "2", default-features = false}
 mockall = "0.13"
 mockall_double = "0.3"
 multer = "3"
@@ -95,7 +94,7 @@ rand = "0.9"
 regex = "1"
 reqwest = "0.12"
 run_script = "0.11"
-rustc-hash = { version = "2", features = ["rand"] }
+rustc-hash = {version = "2", features = ["rand"]}
 same-file = "1"
 scopeguard = "1"
 serde = "1"
@@ -125,31 +124,31 @@ walkdir = "2"
 zstd = "0.13.3"
 
 # Optional dependencies
-rustls = { version = "0.23", default-features = false, features = [
+rustls = {version = "0.23", default-features = false, features = [
   "std",
   "tls12",
-] }
+]}
 rustls-pemfile = "2"
 rustls-pki-types = "1"
 webpki-roots = "1"
 
-tokio-rustls = "0.26"
 native-tls = "0.2"
 tokio-native-tls = "0.3"
+tokio-rustls = "0.26"
 
-tungstenite = "0.27"
 tokio-tungstenite = "0.27"
+tungstenite = "0.27"
 
 [profile.release]
-opt-level = 3
-debug = false
-rpath = false
-lto = true
-debug-assertions = false
 codegen-units = 1
-panic = 'unwind'
+debug = false
+debug-assertions = false
 incremental = false
+lto = true
+opt-level = 3
 overflow-checks = false
+panic = 'unwind'
+rpath = false
 
 # [patch.crates-io]
 # pilota = { git = "https://github.com/cloudwego/pilota.git", branch = "main" }
@@ -159,3 +158,11 @@ overflow-checks = false
 # pilota-thrift-fieldmask = { git = "https://github.com/cloudwego/pilota.git", branch = "main" }
 # motore = { git = "https://github.com/cloudwego/motore.git", branch = "main" }
 # metainfo = { git = "https://github.com/cloudwego/metainfo.git", branch = "main"}
+
+[patch.crates-io]
+faststr = {git = "https://github.com/fishincat/faststr.git", branch = "bytes_ref"}
+pilota = {git = "https://github.com/fishincat/pilota.git", branch = "bytes_ref"}
+pilota-build = {git = "https://github.com/fishincat/pilota.git", branch = "bytes_ref"}
+pilota-thrift-fieldmask = {git = "https://github.com/fishincat/pilota.git", branch = "bytes_ref"}
+pilota-thrift-parser = {git = "https://github.com/fishincat/pilota.git", branch = "bytes_ref"}
+pilota-thrift-reflect = {git = "https://github.com/fishincat/pilota.git", branch = "bytes_ref"}

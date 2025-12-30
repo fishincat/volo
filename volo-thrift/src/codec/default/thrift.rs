@@ -125,12 +125,14 @@ impl ZeroCopyDecoder for ThriftCodec {
         // TODO: do we need to check the response protocol at client side?
         match protocol {
             Protocol::Binary => {
+                let mut bytes_ref: faststr::BytesRef = bytes.clone().into();
+
                 #[cfg(feature = "unsafe-codec")]
                 let mut p = unsafe {
-                    pilota::thrift::binary_unsafe::TBinaryUnsafeInputProtocol::new(bytes)
+                    pilota::thrift::binary_unsafe::TBinaryUnsafeInputProtocol::new(&mut bytes_ref)
                 };
                 #[cfg(not(feature = "unsafe-codec"))]
-                let mut p = TBinaryProtocol::new(bytes, true);
+                let mut p = TBinaryProtocol::new(&mut bytes_ref, true);
                 let msg = ThriftMessage::<Msg>::decode(&mut p, cx)?;
                 #[cfg(feature = "unsafe-codec")]
                 {

@@ -1,52 +1,53 @@
 [package]
-name = "volo-thrift"
-version = "0.12.0"
-edition.workspace = true
-homepage.workspace = true
-repository.workspace = true
-license.workspace = true
 authors.workspace = true
-rust-version.workspace = true
+categories = ["asynchronous", "network-programming", "web-programming"]
 description = "Thrift RPC framework implementation of volo."
 documentation = "https://docs.rs/volo-thrift"
-readme = "README.md"
-categories = ["asynchronous", "network-programming", "web-programming"]
+edition.workspace = true
+homepage.workspace = true
 keywords = ["async", "rpc", "thrift"]
+license.workspace = true
+name = "volo-thrift"
+readme = "README.md"
+repository.workspace = true
+rust-version.workspace = true
+version = "0.12.1"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [badges]
-maintenance = { status = "actively-developed" }
+maintenance = {status = "actively-developed"}
 
 [dependencies]
-volo = { version = "0.12", path = "../volo" }
-pilota.workspace = true
-motore.workspace = true
 metainfo.workspace = true
+motore.workspace = true
+pilota.workspace = true
+volo = {version = "0.12", path = "../volo"}
 
 ahash.workspace = true
 anyhow.workspace = true
 bytes.workspace = true
 chrono.workspace = true
+faststr.workspace = true
 futures.workspace = true
 itoa.workspace = true
-rustc-hash.workspace = true
-linkedbytes.workspace = true
 linked-hash-map.workspace = true
+linkedbytes.workspace = true
 num_enum.workspace = true
 parking_lot.workspace = true
 paste.workspace = true
 pin-project.workspace = true
+rustc-hash.workspace = true
 scopeguard.workspace = true
 sonic-rs.workspace = true
 thiserror.workspace = true
-tokio = { workspace = true, features = [
-    "time",
-    "macros",
-    "rt",
-    "signal",
-    "parking_lot",
-] }
+tokio = {workspace = true, features = [
+  "time",
+  "macros",
+  "rt",
+  "signal",
+  "parking_lot",
+]}
 tracing.workspace = true
 
 [features]
